@@ -1,0 +1,20 @@
+* {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+}
+body {
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    background-color: rgb(60, 20, 0);
+    color: #AA3;
+}
+
+#loader {
+    align-items: center;
+}
+
+ins {
+    align-items: flex-end;
+}
