@@ -1,0 +1,32 @@
+{
+  "name": "jhia's",
+  "version": "1.0.0",
+  "description": "Jhia's portfolio",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhia/jhia.github.io.git"
+  },
+  "keywords": [
+    "web",
+    "site",
+    "single",
+    "page"
+  ],
+  "author": "Jhinel Arcaya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jhia/jhia.github.io/issues"
+  },
+  "homepage": "https://github.com/jhia/jhia.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  },
+  "dependencies": {
+    "markdown-to-html": "0.0.11",
+    "mithril": "^0.2.0"
+  }
+}
