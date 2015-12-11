@@ -17,3 +17,15 @@ code {
     font-weight: 500;
 }
 
+body {
+    background-color: rgb(60, 20, 0);
+    color: rgb(220, 180, 20);
+}
+
+#loader {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-size: 2em;
+    text-overflow: ellipsis;
+}
