@@ -1,3 +1,0 @@
-###Jhia's Blog
-- - -
-> Under Construction...

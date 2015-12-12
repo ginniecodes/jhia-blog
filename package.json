@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/jhia/jhia.github.io#readme",
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "gulp-foreach": "^0.1.0",
+    "gulp-markdown": "^1.2.0"
   },
   "dependencies": {
     "markdown-to-html": "0.0.11",
