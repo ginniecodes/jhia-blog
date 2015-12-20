@@ -1,11 +1,11 @@
 var gulp = require('gulp'),
-    mdify = require('gulp-markdown');
+    mdsonify = require('markit-json');
 
 gulp.task('md to html', function () {
     gulp
     .src('src/markdown/*.md')
-    .pipe(mdify())
-    .pipe(gulp.dest('src/html'));
+    .pipe(mdsonify())
+    .pipe(gulp.dest('src'));
 });
 gulp.task('watch', function() {
     gulp.watch('src/markdown/*.md', ['md to html']);

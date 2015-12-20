@@ -25,7 +25,8 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-foreach": "^0.1.0",
-    "gulp-markdown": "^1.2.0"
+    "gulp-markdown": "^1.2.0",
+    "markit-json": "^0.2.1"
   },
   "dependencies": {
     "markdown-to-html": "0.0.11",
