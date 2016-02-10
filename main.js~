@@ -1,4 +1,4 @@
-var button = document.querySelector('.loader');
+var button = document.querySelector('#loader');
 button.addEventListener('click', function(){
 	var up = document.querySelector('.up'), down = document.querySelector('.down'), patt=/(toggle-up|toggle-down)/g;
 	if(patt.test(up.className) || patt.test(down.className)){

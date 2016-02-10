@@ -92,7 +92,7 @@ body {
 }
 
 .colorful {
-	background: #FFCE9C;
+	background: rgb(239, 221, 174);
 }
 
 .colorful:hover {
