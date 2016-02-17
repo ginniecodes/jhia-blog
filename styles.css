@@ -11,13 +11,20 @@
 
 header, hgroup, h1, h2, h3, h4, h5, h6 {
     font-family: "Lobster", cursive;
-    font-size: 3em;
     color: #F5827D;
+}
+
+h1, h2 {
+	text-align: center;
 }
 
 code {
     font-family: monospace;
     font-weight: 500;
+}
+
+ul, ol, li {
+	list-style: none;
 }
 
 body {
@@ -110,4 +117,37 @@ body {
 .back h2 {
 	color: #F5827D;
 	text-align: center;
+}
+
+.boxes {
+	min-width: 70vw;
+	min-height: 70vh;
+}
+
+.boxes article {
+	position: relative;
+	margin: 3vmax;
+	padding: 10px;
+	text-align: justify;
+}
+
+#about {
+	top: 0;
+}
+
+#blog {
+	float: left;
+}
+
+#blog img {
+	
+}
+
+#projects {
+	float: right;
+}
+
+#design {
+	clear: both;
+	bottom: 0;
 }
