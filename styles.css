@@ -14,7 +14,7 @@ body {
 
 h1 {
   font-family: "Lobster", cursive;
-  text-size: 2rem;
+  font-size: 2rem;
 }
 
 h2, h3, h4, h5, h6 {
@@ -42,19 +42,39 @@ ul, ol, li {
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
 	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
 	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	text-align: center;
 }
 
 .main {
-  height: 100vh;
+  height: 95vh;
   top: 0;
   left: 0;
   overflow: hidden;
   background-color: #111;
+  -webkit-background: radial-gradient(80% #555, #111);
+  -moz-background: radial-gradient(80% #555, #111);
+  -ms-background: radial-gradient(80% #555, #111);
+  -o-background: radial-gradient(80% #555, #111);
   background: radial-gradient(80% #555, #111);
   color: #FFF;
+}
+
+.main button {
+  background: none;
+  border: hidden;
+  color: #FFF;
+  min-height: 10vmin;
+  min-width: 10vmin;
+  font-size: 1.5rem;
+  transition: all 0.5s linear;
+}
+
+.main button:hover {
+  background-color: rgb(80, 80, 150);
+  border-radius: 100%;
 }
 
 section {
@@ -62,8 +82,30 @@ section {
 }
 
 section article {
-  padding: 2rem;
   display: block;
+}
+
+article {
+  background-color: rgb(200, 200, 200);
+  padding: 10vmax;
+}
+
+.left, .right {
+  max-width: 50vw;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+blockquote {
+  border-style: hidden hidden hidden solid;
+  border-color: cyan;
+  padding: 5vmin;
 }
 
 footer {
