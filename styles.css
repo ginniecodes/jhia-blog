@@ -1,6 +1,21 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway|Lobster);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 
 /* #EA4961 */
+
+@font-face {
+  font-family: "Timeline";
+  src: url('fonts/timeline/Timeline.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "Verve Alternate";
+  src: url('fonts/verve/Verve\ Alternate.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "Mochary";
+  src: url('fonts/mochary/Mochary_PERSONAL_USE_ONLY.ttf') format("truetype");
+}
 
 body {
   margin: 0;
@@ -13,12 +28,12 @@ body {
 }
 
 h1 {
-  font-family: "Lobster", cursive;
+  font-family: "Mochary", cursive;
   font-size: 2rem;
 }
 
 h2, h3, h4, h5, h6 {
-  font-family: "Lobster", cursive;
+  font-family: "Mochary", cursive;
   color: #F5827D;
 }
 

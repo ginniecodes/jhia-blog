@@ -1,0 +1,34 @@
+{
+  "name": "jhia",
+  "version": "1.0.1",
+  "description": "Not too girly, Jhia's Blog",
+  "main": "main.js",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "webpack": "^2.1.0-beta.25"
+  },
+  "devDependencies": {
+    "debug": "^2.2.0",
+    "webpack": "^2.1.0-beta.25"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhia/jhia.github.io.git"
+  },
+  "keywords": [
+    "blog",
+    "github",
+    "girl",
+    "tech",
+    "girly"
+  ],
+  "author": "Jhinel Arcaya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jhia/jhia.github.io/issues"
+  },
+  "homepage": "https://github.com/jhia/jhia.github.io#readme"
+}
