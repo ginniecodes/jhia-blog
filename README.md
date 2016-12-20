@@ -1,7 +1,11 @@
-#Hi sweeties
+#Jh.i_am, that's all!
 
-Jhinel Arcaya's portfolio source code, hosted in Github.
+My blog, take care of it :wink:
 
-### Website
+Hosted in GitHub Pages, powered by Hexo.
 
-You can see it visiting [Jhia's](https://jhia.github.io).
+Template: [Pinktage](https://github.com/jhia/hexo-theme-pinktage)!
+
+## Blog
+
+You can see it visiting [this link](https://jhia.github.io).

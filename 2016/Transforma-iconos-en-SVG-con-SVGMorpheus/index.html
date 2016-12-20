@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Transforma íconos en SVG con SVGMorpheus | Jhiam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  
+</head>
+
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/.">home</a>
+    
+  
+    
+      <a href="/archives">all</a>
+    
+  
+    
+      <a href="/whoami">whoami</a>
+    
+  
+</nav>
+
+  <header class="app-header">
+  <section class="banner">
+  <!-- http://daverupert.com/2015/12/intrinsic-placeholders-with-picture/ -->
+  <div class="placeholder"></div>
+  <img
+    class="banner-small"
+    data-src="http://static.tumblr.com/d4cdd8d209e23f248e5b62516ae78fb2/yqjqglp/SQjmt2p56/tumblr_static_pink-typewriter-hi-res-header.jpg"
+    src="http://static.tumblr.com/d4cdd8d209e23f248e5b62516ae78fb2/yqjqglp/SQjmt2p56/tumblr_static_pink-typewriter-hi-res-header.jpg"
+    alt="banner"
+  />
+</section>
+</header>
+<main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2016/Transforma-iconos-en-SVG-con-SVGMorpheus/">Transforma íconos en SVG con SVGMorpheus</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">diciembre 19 2016</p>
+  </section>
+
+  <section class="article-entry">
+    <p>Amo los vectores.</p>
+<p>Sin embargo, animar los gráficos vectoriales tiene sus reglas y no sólo me refiero a las de estilo (RIP SMIL). Si necesitas realizar animaciones a un vector puedes usar <a href="http://snapsvg.io/" target="_blank" rel="external">Snap.svg</a>, pero si quieres hacer transiciones de un vector a otro, <a href="https://github.com/alexk111/SVG-Morpheus" target="_blank" rel="external">SVGMorpheus</a> es una buena opción si quieres algo simple pero completo.</p>
+<p>La estructura de los sets de gráficos establece que cada uno debe ser un nodo <code>&lt;g&gt;&lt;/g&gt;</code> con un id, dentro todos los shapes que lo definen. Soporta los elementos <code>path, circle, rect, ellipse, polygon, line</code>, aunque en mi experiencia no me renderiza alguno de ellos, path funciona perfectamente. Si tus vectores son complejos y aún quieres usar SVGMorpheus debes considerar empezar a descomponerlos y simplificarlos hasta. Nada de árboles dentro del nodo del gráfico.</p>
+<h2 id="DIY-I-Love-Pineapples"><a href="#DIY-I-Love-Pineapples" class="headerlink" title="DIY: I Love Pineapples"></a>DIY: I Love Pineapples</h2><p>Alternemos este svg que es un set de íconos de un corazón y una piña:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"125mm"</span> <span class="attr">height</span>=<span class="string">"125mm"</span> <span class="attr">viewBox</span>=<span class="string">"0 0 12500 12500"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">g</span> <span class="attr">id</span>=<span class="string">"heart"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">fill</span>=<span class="string">"rgb(220,0,35)"</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">d</span>=<span class="string">"M 6124,2023 C 7581,658 9740,728 11106,2187 12472,3645 12401,5804 10942,7169 9484,8534 7325,8463 5960,7004 4594,5546 4665,3388 6124,2023 Z M 3551,4432 L 3551,4432 Z M 13517,4760 L 13517,4760 Z"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">fill</span>=<span class="string">"rgb(220,0,35)"</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">d</span>=<span class="string">"M 1518,1944 C 2975,579 5133,649 6498,2107 7863,3566 7792,5724 6333,7089 4874,8454 2718,8381 1352,6924 -13,5465 59,3310 1518,1944 Z M -1054,4352 L -1054,4352 Z M 8907,4680 L 8907,4680 Z"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">fill</span>=<span class="string">"rgb(220,0,35)"</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">d</span>=<span class="string">"M 8509,9414 L 5937,11823 1155,6715 6302,1897 11083,7005 8509,9414 Z"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">g</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">g</span> <span class="attr">id</span>=<span class="string">"pineapple"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">fill</span>=<span class="string">"rgb(0,170,68)"</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">d</span>=<span class="string">"M 6525,389 L 5669,2239 5077,300 4708,2696 3445,720 3491,3094 1900,1774 3337,5461 5599,4631 7943,5446 9845,2156 7803,3001 8065,929 6860,2750 6525,389 Z"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">fill</span>=<span class="string">"rgb(255,212,42)"</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">d</span>=<span class="string">"M 5713,11100 C 7211,11100 8426,9886 8426,8387 L 8426,6623 C 8426,5125 7211,3910 5713,3910 4215,3910 3000,5125 3000,6623 L 3000,8387 C 3000,9886 4215,11100 5713,11100 Z"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">fill</span>=<span class="string">"rgb(255,204,0)"</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">d</span>=<span class="string">"M 3428,6900 L 3457,6928 C 3471,6942 3493,6942 3507,6930 L 5940,4844 C 5954,4832 5955,4811 5942,4798 L 5884,4740 C 5871,4727 5848,4726 5834,4739 L 3401,6825 C 3387,6837 3386,6858 3400,6871 L 3428,6900 Z"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">fill</span>=<span class="string">"rgb(255,204,0)"</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">d</span>=<span class="string">"M 3558,7813 L 3604,7845 C 3624,7859 3657,7858 3677,7843 L 7047,5220 C 7066,5204 7066,5180 7045,5166 L 6953,5103 C 6933,5089 6900,5090 6880,5105 L 3510,7728 C 3491,7744 3491,7768 3512,7782 L 3558,7813 Z"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">fill</span>=<span class="string">"rgb(255,204,0)"</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">d</span>=<span class="string">"M 3692,9108 L 3739,9141 C 3760,9156 3794,9155 3814,9138 L 7267,6390 C 7288,6373 7287,6348 7266,6333 L 7172,6268 C 7151,6253 7117,6254 7097,6270 L 3644,9019 C 3623,9035 3624,9060 3645,9075 L 3692,9108 Z"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">fill</span>=<span class="string">"rgb(255,204,0)"</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">d</span>=<span class="string">"M 4220,10201 L 4265,10234 C 4286,10250 4318,10249 4338,10232 L 7666,7400 C 7685,7383 7684,7357 7664,7342 L 7574,7274 C 7553,7258 7521,7259 7501,7276 L 4173,10109 C 4154,10125 4154,10151 4175,10167 L 4220,10201 Z"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">fill</span>=<span class="string">"rgb(255,204,0)"</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">d</span>=<span class="string">"M 7772,7527 L 7722,7556 C 7699,7568 7664,7567 7642,7553 L 3981,5182 C 3959,5168 3960,5146 3982,5133 L 4082,5076 C 4105,5063 4140,5064 4162,5078 L 7823,7450 C 7845,7464 7844,7485 7822,7498 L 7772,7527 Z"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">fill</span>=<span class="string">"rgb(255,204,0)"</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">d</span>=<span class="string">"M 7521,8935 L 7469,8965 C 7445,8979 7408,8978 7386,8963 L 3557,6424 C 3535,6409 3536,6386 3559,6372 L 3664,6311 C 3687,6297 3724,6298 3747,6313 L 7575,8852 C 7597,8867 7597,8890 7573,8904 L 7521,8935 Z"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">fill</span>=<span class="string">"rgb(255,204,0)"</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">d</span>=<span class="string">"M 7260,10109 L 7211,10139 C 7189,10153 7155,10152 7133,10137 L 3555,7640 C 3534,7625 3535,7602 3557,7589 L 3655,7528 C 3676,7515 3711,7516 3732,7531 L 7310,10028 C 7331,10043 7331,10066 7309,10079 L 7260,10109 Z"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">fill</span>=<span class="string">"rgb(255,204,0)"</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">d</span>=<span class="string">"M 5291,10562 L 5320,10591 C 5334,10604 5356,10605 5370,10592 L 7800,8503 C 7815,8491 7815,8470 7802,8457 L 7744,8399 C 7731,8386 7708,8385 7694,8398 L 5264,10487 C 5250,10499 5249,10520 5263,10533 L 5291,10562 Z"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">fill</span>=<span class="string">"rgb(255,204,0)"</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">d</span>=<span class="string">"M 7661,6322 L 7637,6355 C 7626,6370 7604,6375 7588,6365 L 4859,4684 C 4843,4674 4839,4654 4850,4639 L 4898,4573 C 4909,4558 4931,4553 4948,4563 L 7676,6244 C 7692,6254 7696,6274 7685,6290 L 7661,6322 Z"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">fill</span>=<span class="string">"rgb(255,204,0)"</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">d</span>=<span class="string">"M 6188,10512 L 6164,10545 C 6153,10560 6131,10565 6115,10555 L 3386,8874 C 3370,8864 3366,8844 3377,8829 L 3425,8763 C 3436,8748 3458,8743 3475,8753 L 6203,10434 C 6219,10444 6223,10464 6212,10480 L 6188,10512 Z"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">g</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Pueden ser usados en el mismo archivo html o puedes usar <code>&lt;object&gt;</code> en este caso el <code>index.html</code>:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">object</span> <span class="attr">id</span>=<span class="string">"iconset"</span> <span class="attr">data</span>=<span class="string">"iconset.svg"</span> <span class="attr">type</span>=<span class="string">"image/svg+xml"</span>&gt;</span><span class="tag">&lt;/<span class="name">object</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/SVG-Morpheus/0.3.2/svg-morpheus.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"main.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Inserta también SVGMorpheus, según su <a href="https://github.com/alexk111/SVG-Morpheus/blob/master/README.md" target="_blank" rel="external">documentación</a> también puedes usarlo de manera modular.</p>
+<p>En el <code>main.js</code> creamos una instancia de SVGMorpheus con el id del svg:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> mySvg = <span class="keyword">new</span> SVGMorpheus(<span class="string">'#iconset'</span>);</div></pre></td></tr></table></figure>
+<p>Por defecto el primer ícono que toma es el último, para cambiar de ícono le especificas el id que le asignaste al gráfico en el método <code>SVGMorpheus.prototype.to</code>:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> mySvg = <span class="keyword">new</span> SVGMorpheus(<span class="string">'#iconset'</span>);</div><div class="line"></div><div class="line">mySvg.to(<span class="string">'heart'</span>);</div></pre></td></tr></table></figure></p>
+<p>Ahora simplemente hagamos que se intercambien por intervalos:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> mySvg = <span class="keyword">new</span> SVGMorpheus(<span class="string">'#iconset'</span>);</div><div class="line"></div><div class="line">mySvg.to(<span class="string">'heart'</span>);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> newIconName = mySvg._curIconId === <span class="string">'heart'</span> ? <span class="string">'pineapple'</span> : <span class="string">'heart'</span>;</div><div class="line">  mySvg.to(newIconName);</div><div class="line">&#125;</div><div class="line"></div><div class="line">setInterval(change, <span class="number">2000</span>);</div></pre></td></tr></table></figure>
+<p>Una de las propiedades en las instancias de SVGMorpheus es <code>SVGMorpheus.prototype._curIconId</code> que señala el nombre del ícono que se está mostrando.</p>
+<p>¡Y listo!</p>
+<p></p><p data-height="265" data-theme-id="dark" data-slug-hash="GNejgO" data-default-tab="html,result" data-user="jhiam" data-embed-version="2" data-pen-title="I <3 Pineapple" class="codepen">See the Pen <a href="http://codepen.io/jhiam/pen/GNejgO/" target="_blank" rel="external">I <3 pineapple<="" a=""> by Jhinel Arcaya (<a href="http://codepen.io/jhiam" target="_blank" rel="external">@jhiam</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</3></a></p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>Anímate a usar vectores, <em>¡besitos en spray!</em></p>
+
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="/images/cup2.svg" alt="avatar" />
+    <div class="grid-item">
+      <p class="title"> Jhiam </p>
+      <p class="subtitle"> El resultado del café </p>
+    <div>
+  </section>
+
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a
+  class="twitter-share-button"
+  data-size="large"
+  data-via="All_Jh"
+  href="https://twitter.com/intent/tweet?text=Transforma íconos en SVG con SVGMorpheus"
+>
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+</main>
+
+  <footer class="app-footer">
+  <p>Made with love by <a href="https://jhia.github.io">Jhia</a>.</p>
+
+  <p>Edition of a Hexo theme written by
+    <a href="https://github.com/DrakeLeung/hexo-theme-again">
+      Drake Leung
+    </a>. Powered by <a href="https://hexo.io"> Hexo </a></p>
+</footer>
+
+</body>
+<script src="/js/svgmorpheus.js"></script>
+<script src="/js/app.js"></script>
+</html>
