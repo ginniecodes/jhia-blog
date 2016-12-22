@@ -269,7 +269,7 @@ main.post {
     font-size: 3.4em;
     font-family: "DK Lemon Yellow Sun", Tahoma, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, sans-serif;
     text-align: center;
-    text-transform: capitalize;
+    text-transform: small-caps;
     padding-top: 30px; }
   main.post .article-date {
     text-align: center;

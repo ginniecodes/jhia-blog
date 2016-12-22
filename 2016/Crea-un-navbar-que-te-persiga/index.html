@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Crea un navbar que te persiga | Jhiam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  
+</head>
+
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/.">home</a>
+    
+  
+    
+      <a href="/archives">all</a>
+    
+  
+    
+      <a href="/whoami">whoami</a>
+    
+  
+</nav>
+
+  <header class="app-header">
+  <section class="banner">
+  <!-- http://daverupert.com/2015/12/intrinsic-placeholders-with-picture/ -->
+  <div class="placeholder"></div>
+  <img
+    class="banner-small"
+    data-src="http://static.tumblr.com/d4cdd8d209e23f248e5b62516ae78fb2/yqjqglp/SQjmt2p56/tumblr_static_pink-typewriter-hi-res-header.jpg"
+    src="http://static.tumblr.com/d4cdd8d209e23f248e5b62516ae78fb2/yqjqglp/SQjmt2p56/tumblr_static_pink-typewriter-hi-res-header.jpg"
+    alt="banner"
+  />
+</section>
+</header>
+<main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2016/Crea-un-navbar-que-te-persiga/">Crea un navbar que te persiga</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">diciembre 21 2016</p>
+  </section>
+
+  <section class="article-entry">
+    <blockquote>
+<p>Nav, es hora de la venganza.</p>
+</blockquote>
+<p>La primera vez que realicé estos fixed navbars muy comunes en las UI de diseño Mobile First (Primero el móvil) pensé:</p>
+<blockquote>
+<p><em>he creado un monstruo</em>.</p>
+</blockquote>
+<h2 id="¿Te-cuento-una-historia"><a href="#¿Te-cuento-una-historia" class="headerlink" title="¿Te cuento una historia?"></a>¿Te cuento una historia?</h2><p>Érase una vez, en una época muy lejana cuando HTML5 aún no era un estándar, una dulce jovencita que no le hacía gracia el color rosa pastel conoció la propiedad <code>position: fixed</code> y decidió probarla realizando una barra fija como las que conseguía en la web, llena de botones llamativos y demás parafernalias…</p>
+<p>Los fixed navbars son las barras de navegación que se encuentran en una posición fija dentro de la página. Es común verlas en apps (web o native), proporcionan usabilidad y rapidez en las interacciones y ofrecen una experiencia de navegación bastante buena.</p>
+<blockquote>
+<p>El botón está ahí. En el fondo a la derecha, junto a los otros «corotos» de los likes y eso.</p>
+</blockquote>
+<p>Todo suena bien a excepción de realizar una barra cuya altura toma gran parte del espacio, que en ese entonces era un 35% de la altura del contenedor (<em>bad practice #1</em>). Al menos la pobre aprendió cómo no realizar navbars, y a su vez, que debía empezar a estudiar más sobre proporciones.</p>
+<h2 id="Para-crear-un-navbar-fijo-necesitamos…"><a href="#Para-crear-un-navbar-fijo-necesitamos…" class="headerlink" title="Para crear un navbar fijo necesitamos…"></a>Para crear un navbar fijo necesitamos…</h2><p>Si sólo necesitas una barra que te persiga cual stalker sólo algunas reglas de estilo bastan, más haremos una barra al tope que cambie de color cuando se haga scrolling. Así resalta aún más y se hace notar.</p>
+<p>En el archivo de etiquetas, agregamos <code>&lt;meta name=&quot;viewport&quot; ... /&gt;</code> para poder usar los viewports (<code>vh, vw, vmax, vmin</code>) en el CSS.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"styles.css"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Some nav is following me<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">nav</span> <span class="attr">id</span>=<span class="string">"navbar"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">span</span>&gt;</span>Hello, It's me<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">button</span>&gt;</span>Pickles!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">max-width</span>: <span class="number">100vw</span>;</div><div class="line">  <span class="attribute">min-height</span>: <span class="number">200vh</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0px</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0px</span>;</div><div class="line">  <span class="attribute">border</span>: <span class="number">0px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">1.7vmin</span>;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">  <span class="attribute">font-family</span>: sans, sans-serif;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">nav</span> &#123;</div><div class="line">  <span class="attribute">position</span>: fixed;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">3em</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#EEE</span>;</div><div class="line">  <span class="attribute">box-sizing</span>: border-box;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">12px</span> <span class="number">18px</span>;</div><div class="line">  <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">4px</span> <span class="number">7px</span> <span class="number">#777</span>;</div><div class="line">  <span class="attribute">transition</span>: background-color <span class="number">0.4s</span> ease-out;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">nav</span> <span class="selector-tag">span</span> &#123;</div><div class="line">  <span class="attribute">font-weight</span>: <span class="number">600</span>;</div><div class="line">  <span class="attribute">letter-spacing</span>: .<span class="number">085em</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">nav</span> <span class="selector-tag">button</span> &#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(50%);</div><div class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">min-height</span>: <span class="number">1.5em</span>;</div><div class="line">  <span class="attribute">min-width</span>: <span class="number">80px</span>;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#eee</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#222</span>;</div><div class="line">  <span class="attribute">border</span>: <span class="number">0px</span>;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">2px</span>;</div><div class="line">  <span class="attribute">margin-right</span>: <span class="number">18px</span>;</div><div class="line">  <span class="attribute">text-transform</span>: uppercase;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">nav</span><span class="selector-class">.scroll</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#A1572F</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#eef</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Agregué una regla para los nav con la clase scroll, con JavaScript, al hacer scroll simplemente le agregamos esa clase y ya todo el estilo le corresponderá.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onscroll = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">const</span> nav = <span class="built_in">document</span>.querySelector(<span class="string">'#navbar'</span>);</div><div class="line">  <span class="keyword">if</span>(<span class="keyword">this</span>.scrollY &lt;= <span class="number">10</span>) nav.className = <span class="string">''</span>; <span class="keyword">else</span> nav.className = <span class="string">'scroll'</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>Puede usarse el evento <code>scroll</code> o bien asignar a <code>window.onscroll</code> la función.</p>
+<p><code>this.scrollY</code> contiene la posición del eje Y en la página, esta corresponde es a la altura de la vista del archivo, no del viewport del navegador.</p>
+<p>Así quedaría nuestra barra de navegación:</p>
+<p></p><p data-height="265" data-theme-id="dark" data-slug-hash="woZaKZ" data-default-tab="html,result" data-user="jhiam" data-embed-version="2" data-pen-title="Navbar changes color on scrolling" class="codepen">See the Pen <a href="http://codepen.io/jhiam/pen/woZaKZ/" target="_blank" rel="external">Navbar changes color on scrolling</a> by Jhinel Arcaya (<a href="http://codepen.io/jhiam" target="_blank" rel="external">@jhiam</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>Súper simple, agrégale lo que creas que mejor iría, listas, botones… ¡Anímate!</p>
+<p><em>¡Besitos en spray!</em></p>
+<p><em>Todas las citas en este post son atribuídas a la autora del mismo</em>.</p>
+
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="/images/cup2.svg" alt="avatar" />
+    <div class="grid-item">
+      <p class="title"> Jhiam </p>
+      <p class="subtitle"> El resultado del café </p>
+    <div>
+  </section>
+
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a
+  class="twitter-share-button"
+  data-size="large"
+  data-via="All_Jh"
+  href="https://twitter.com/intent/tweet?text=Crea un navbar que te persiga"
+>
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+</main>
+
+  <footer class="app-footer">
+  <p>Made with love by <a href="https://jhia.github.io">Jhia</a>.</p>
+
+  <p>Edition of a Hexo theme written by
+    <a href="https://github.com/DrakeLeung/hexo-theme-again">
+      Drake Leung
+    </a>. Powered by <a href="https://hexo.io"> Hexo </a></p>
+</footer>
+
+</body>
+<script src="/js/svgmorpheus.js"></script>
+<script src="/js/app.js"></script>
+</html>
